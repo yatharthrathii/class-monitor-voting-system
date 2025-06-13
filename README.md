@@ -1,6 +1,6 @@
 # 🎓 Class Monitor Vote System
 
-A responsive and clean React-based voting system where students can vote for their preferred class monitor among three candidates: **Yatharth**, **Tanmay**, and **Himanshi**.
+A responsive and clean React-based voting system where students can vote for their preferred class monitor among three candidates: **Yatharth**, **Tanmay**, and **Himanshu**.
 
 ## Website Layout
 ![Screenshot 2025-06-09 150521](https://github.com/user-attachments/assets/4badf7d5-c73c-470a-a663-cd236f050ccc)
