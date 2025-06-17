@@ -1,7 +1,7 @@
 import Header from "./components/Header";
 import VoteForm from "./components/VoteForm";
 import VoteSection from "./components/VoteSection";
-import { VoteProvider } from "./context/VoteContextLocal";
+import { VoteProvider } from "./context/VoteContextApi";
 
 const App = () => {
   return (

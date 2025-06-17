@@ -1,4 +1,4 @@
-import { useVote } from "../context/VoteContextLocal";
+import { useVote } from "../context/VoteContextApi";
 import VoteCard from "./VoteCard";
 
 const VoteSection = () => {

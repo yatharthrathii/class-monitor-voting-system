@@ -1,4 +1,4 @@
-import { useVote } from "../context/VoteContextLocal";
+import { useVote } from "../context/VoteContextApi";
 import { XCircle } from "lucide-react";
 
 const VoteCard = ({ candidate }) => {
@@ -22,9 +22,9 @@ const VoteCard = ({ candidate }) => {
         ) : (
           voters.map((voter, idx) => (
             <li key={idx} className="flex justify-between items-center">
-              <span>{voter}</span>
+              <span>{voter.voterName}</span>
               <button
-                onClick={() => removeVote(voter, candidate)}
+                onClick={() => removeVote(voter.id)}
                 aria-label={`Remove vote by ${voter}`}
                 className="text-red-500 hover:text-red-700 transition"
               >

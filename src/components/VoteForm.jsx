@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useVote } from "../context/VoteContextLocal";
+import { useVote } from "../context/VoteContextApi";
 import { PlusCircle, XCircle } from "lucide-react";
 
 const VoteForm = () => {

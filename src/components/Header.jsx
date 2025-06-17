@@ -1,4 +1,4 @@
-import { useVote } from "../context/VoteContextLocal";
+import { useVote } from "../context/VoteContextApi";
 import { Landmark } from "lucide-react";
 
 const Header = () => {

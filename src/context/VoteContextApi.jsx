@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const VoteContext = createContext();
 
-const API_URL = "https://your-backend.com/api/votes";
+const API_URL = "https://crudcrud.com/api/6d82b1060b3e48bd907c3c03d9e38db4/votes";
 
 export const VoteProvider = ({ children }) => {
   const [votes, setVotes] = useState({
@@ -15,7 +15,20 @@ export const VoteProvider = ({ children }) => {
     try {
       const res = await fetch(API_URL);
       const data = await res.json();
-      setVotes(data);
+
+      const groupedVotes = {
+        Yatharth: [],
+        Tanmay: [],
+        Himanshu: [],
+      };
+
+      data.forEach(({ voterName, candidate, _id }) => {
+        if (groupedVotes[candidate]) {
+          groupedVotes[candidate].push({ voterName, id: _id });
+        }
+      });
+
+      setVotes(groupedVotes);
     } catch (error) {
       console.error("Error fetching votes:", error);
     }
@@ -40,12 +53,10 @@ export const VoteProvider = ({ children }) => {
     }
   };
 
-  const removeVote = async (voterName, candidate) => {
+  const removeVote = async (id) => {
     try {
-      const res = await fetch(API_URL, {
+      const res = await fetch(`${API_URL}/${id}`, {
         method: "DELETE",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ voterName, candidate }),
       });
       if (res.ok) {
         fetchVotes();
